@@ -424,7 +424,7 @@ always_ff @( posedge clk_i or posedge rst_i )
 Активным уровнем для сброса считаем `1`, т.е. когда `rst_i == 1'b1`, то схема находится в ресете. 
 
 Описание триггера с асинхронным ресетом:
-```
+```systemverilog
 always_ff @( posedge clk_i or posedge rst_i )
   if( rst_i )
     cnt <= 8'd0;
@@ -433,7 +433,7 @@ always_ff @( posedge clk_i or posedge rst_i )
 ```
 
 Описание триггера с синхронным ресетом:
-```
+```systemverilog
 always_ff @( posedge clk_i )
   if( srst_i )
     cnt <= 8'd0;
@@ -442,7 +442,7 @@ always_ff @( posedge clk_i )
 ```
 
 Описание триггера с синхронным и асинхронным ресетом:
-```
+```systemverilog
 always_ff @( posedge clk_i or posedge rst_i )
   if( rst_i )
     cnt <= 8'd0;
